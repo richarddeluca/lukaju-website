@@ -12,27 +12,27 @@ export const ARTISTS_DATA: Record<string, ArtistConfig> = {
     name: "Hime",
     role: "Character Illustrator",
     img: "/artists/hime.webp",
-    targetUrl: "https://twitter.com/hime", // Substitua pelo link real do artista (Twitter/X, ArtStation, Pixiv, etc.)
+    targetUrl: "https://linktr.ee/hime07358",
   },
   valneeko: {
     slug: "valneeko",
     name: "Valneeko",
     role: "Character Illustrator",
     img: "/artists/valneeko.jpg",
-    targetUrl: "https://twitter.com/valneeko", // Substitua pelo link real do artista
+    targetUrl: "https://valneeko.carrd.co/",
   },
   hoyo: {
     slug: "hoyo",
     name: "HoYo",
-    role: "Key Visuals & Art Assets",
+    role: "Character Illustrator",
     img: "/artists/hoyo.jpg",
-    targetUrl: "https://twitter.com/hoyo", // Substitua pelo link real do artista
+    targetUrl: "https://cara.app/hoyoart",
   },
   "lua-lunareth": {
     slug: "lua-lunareth",
     name: "Lua Lunareth",
-    role: "Color & Environmental Mood",
+    role: "Background Illustrator",
     img: "/artists/lua_lunareth.jpg",
-    targetUrl: "https://twitter.com/lualunareth", // Substitua pelo link real do artista
+    targetUrl: "https://lualunareth.carrd.co/",
   },
 };
