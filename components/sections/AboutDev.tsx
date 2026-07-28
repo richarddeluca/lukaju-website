@@ -2,31 +2,11 @@ import React from "react";
 import Image from "next/image";
 import { Badge } from "../ui/Badge";
 import { Card } from "../ui/Card";
-import { Palette, Heart, Sparkles, ExternalLink } from "lucide-react";
+import { ARTISTS_DATA } from "@/config/artists";
+import { Palette, Heart, ExternalLink } from "lucide-react";
 
 export const AboutDev: React.FC = () => {
-  const artists = [
-    {
-      name: "Hime",
-      role: "Character Illustrator",
-      img: "/artists/hime.webp",
-    },
-    {
-      name: "Valneeko",
-      role: "Character Illustrator",
-      img: "/artists/valneeko.jpg",
-    },
-    {
-      name: "HoYo",
-      role: "Key Visuals & Art Assets",
-      img: "/artists/hoyo.jpg",
-    },
-    {
-      name: "Lua Lunareth",
-      role: "Color & Environmental Mood",
-      img: "/artists/lua_lunareth.jpg",
-    },
-  ];
+  const artistList = Object.values(ARTISTS_DATA);
 
   return (
     <section id="about" className="py-24 px-4 sm:px-6 relative bg-[#0A0B10] border-t border-white/5">
@@ -83,7 +63,7 @@ export const AboutDev: React.FC = () => {
             </Card>
           </div>
 
-          {/* Right Column: Illustrators & Artists Section (Replicated from Print 4) */}
+          {/* Right Column: Illustrators & Artists Section */}
           <div className="lg:col-span-6 space-y-6">
             <Card hoverEffect={false} className="h-full space-y-6 bg-[#131620] border-white/10">
               <div className="flex items-center gap-2">
@@ -97,30 +77,36 @@ export const AboutDev: React.FC = () => {
                 Special gratitude to the incredible artists whose artwork, character designs, and CGs give soul to <span className="text-white font-semibold">Sexting Her</span>:
               </p>
 
-              {/* Artist Grid with Real Game Pictures */}
+              {/* Artist Grid with Redirect Tracking Links */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                {artists.map((artist, idx) => (
-                  <div
-                    key={idx}
-                    className="p-3 rounded-xl bg-[#0D0F17] border border-white/10 flex items-center gap-3 hover:border-[#9E0038]/50 transition-all"
+                {artistList.map((artist) => (
+                  <a
+                    key={artist.slug}
+                    href={`/artists/${artist.slug}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="p-3 rounded-xl bg-[#0D0F17] border border-white/10 flex items-center justify-between gap-3 hover:border-[#9E0038] hover:bg-[#181D2B] transition-all group"
                   >
-                    <div className="relative w-11 h-11 rounded-full overflow-hidden border border-white/20 shrink-0">
-                      <Image
-                        src={artist.img}
-                        alt={artist.name}
-                        fill
-                        className="object-cover"
-                      />
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className="relative w-11 h-11 rounded-full overflow-hidden border border-white/20 shrink-0">
+                        <Image
+                          src={artist.img}
+                          alt={artist.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-sm font-bold text-white truncate group-hover:text-[#9E0038] transition-colors">
+                          {artist.name}
+                        </h4>
+                        <p className="text-[10px] text-[#9CA3AF] font-mono truncate">
+                          {artist.role}
+                        </p>
+                      </div>
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className="text-sm font-bold text-white truncate">
-                        {artist.name}
-                      </h4>
-                      <p className="text-[10px] text-[#9CA3AF] font-mono truncate">
-                        {artist.role}
-                      </p>
-                    </div>
-                  </div>
+                    <ExternalLink className="w-4 h-4 text-[#9CA3AF] group-hover:text-[#9E0038] shrink-0" />
+                  </a>
                 ))}
               </div>
 

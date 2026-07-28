@@ -6,22 +6,12 @@ import {
   Wifi,
   Battery,
   ArrowLeft,
-  Phone,
-  MoreVertical,
-  Sliders,
   CheckCheck,
-  RotateCcw,
   Sparkles,
   GitCommit,
-  User,
-  Heart,
-  Volume2,
-  Lock,
-  Globe,
   Settings,
   MessageSquare,
   Users,
-  Compass,
 } from "lucide-react";
 
 export const PhoneMockup: React.FC = () => {
@@ -49,7 +39,7 @@ export const PhoneMockup: React.FC = () => {
         </div>
       </div>
 
-      {/* Phone Screen Switcher Tabs (Diegetic Interface Navigation) */}
+      {/* Phone Screen Switcher Tabs */}
       <div className="px-2 py-1.5 bg-[#131620] border-b border-white/10 flex justify-around text-[10px] font-mono text-[#9CA3AF]">
         <button
           onClick={() => setActiveScreen("home")}
@@ -171,7 +161,7 @@ export const PhoneMockup: React.FC = () => {
         </div>
       )}
 
-      {/* SCREEN 2: CHAT APP SCREEN (EXACT REPLICA OF GAME CHAT SCRIPTS) */}
+      {/* SCREEN 2: CHAT APP SCREEN */}
       {activeScreen === "chat" && (
         <div className="h-[420px] bg-[#0A0B10] flex flex-col justify-between">
           {/* Chat Header */}
@@ -187,7 +177,6 @@ export const PhoneMockup: React.FC = () => {
                 </p>
               </div>
             </div>
-            {/* Persona Switcher Toggle inside phone */}
             <div className="flex items-center gap-1.5">
               <button
                 onClick={() => setChatPersona(chatPersona === "chloe" ? "isabelle" : "chloe")}
@@ -202,7 +191,6 @@ export const PhoneMockup: React.FC = () => {
           <div className="p-3.5 space-y-3 overflow-y-auto text-xs bg-[#090C12] cyber-grid flex-1">
             {chatPersona === "chloe" ? (
               <>
-                {/* Chloe & Ashley Chat Thread (Replicated from Print 5) */}
                 <div className="flex flex-col items-start max-w-[85%] space-y-1">
                   <span className="text-[9px] font-mono text-[#9E0038]">Ashley</span>
                   <div className="bg-[#181D2B] text-white p-2.5 rounded-2xl rounded-tl-xs border border-white/10 text-[11px]">
@@ -238,7 +226,6 @@ export const PhoneMockup: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Player Selected Response Bubble (Wine Color #9E0038) */}
                 <div className="flex flex-col items-end ml-auto max-w-[90%] pt-1">
                   <div className="bg-[#9E0038] text-white font-medium p-2.5 rounded-2xl rounded-tr-xs border border-[#E11D48]/50 shadow-[0_0_15px_rgba(158,0,56,0.3)] text-[11px]">
                     It's a childhood friend of mine
@@ -251,7 +238,6 @@ export const PhoneMockup: React.FC = () => {
               </>
             ) : (
               <>
-                {/* Isabelle Chat Thread (Navy & Blue Replicated from Print 7) */}
                 <div className="flex flex-col items-start max-w-[85%] space-y-1">
                   <span className="text-[9px] font-mono text-[#38BDF8]">Isabelle</span>
                   <div className="bg-[#0F172A] text-white p-2.5 rounded-2xl rounded-tl-xs border border-white/10 text-[11px]">
@@ -283,7 +269,6 @@ export const PhoneMockup: React.FC = () => {
                   </div>
                 </div>
 
-                {/* Game Time Divider */}
                 <div className="flex justify-center my-2">
                   <span className="px-3 py-1 rounded-full bg-white/5 text-[10px] font-mono text-[#9CA3AF] border border-white/10">
                     1 year together • With this special girl
@@ -293,7 +278,7 @@ export const PhoneMockup: React.FC = () => {
             )}
           </div>
 
-          {/* Bottom Chat Bar with Game Wine Primary Response Pill */}
+          {/* Bottom Chat Bar */}
           <div className="p-2.5 bg-[#131620] border-t border-white/10 space-y-2">
             <button
               onClick={() => setSelectedOption("Childhood Friend")}
@@ -305,10 +290,9 @@ export const PhoneMockup: React.FC = () => {
         </div>
       )}
 
-      {/* SCREEN 3: INTERACTIVE ROUTES GRAPH (REPLICATED FROM PRINT 8) */}
+      {/* SCREEN 3: ROUTES GRAPH */}
       {activeScreen === "routes" && (
         <div className="h-[420px] bg-[#0A0B10] flex flex-col justify-between p-4 relative cyber-grid overflow-hidden">
-          {/* Header */}
           <div className="flex items-center justify-between pb-3 border-b border-white/10 z-10">
             <div className="flex items-center gap-2">
               <ArrowLeft className="w-4 h-4 text-[#9CA3AF]" />
@@ -319,9 +303,7 @@ export const PhoneMockup: React.FC = () => {
             </span>
           </div>
 
-          {/* Interactive Node Graph Visualization */}
           <div className="relative flex-1 flex flex-col items-center justify-center my-2">
-            {/* SVG Connecting Paths */}
             <svg className="absolute inset-0 w-full h-full pointer-events-none" viewBox="0 0 300 280">
               <path
                 d="M 150 20 L 150 70 M 150 70 L 90 130 M 150 70 L 210 130 M 90 130 L 150 200 M 210 130 L 150 200 M 150 200 L 150 250"
@@ -332,14 +314,11 @@ export const PhoneMockup: React.FC = () => {
               />
             </svg>
 
-            {/* Nodes */}
             <div className="relative z-10 flex flex-col items-center gap-10">
-              {/* Start Root Node */}
               <div className="w-10 h-10 rounded-full bg-[#9E0038] border-2 border-white flex items-center justify-center text-white shadow-[0_0_20px_rgba(158,0,56,0.8)] cursor-pointer hover:scale-110 transition-transform">
                 <GitCommit className="w-5 h-5" />
               </div>
 
-              {/* Branch Decision Nodes */}
               <div className="flex justify-between w-52">
                 <div className="w-8 h-8 rounded-full bg-[#131620] border-2 border-[#9E0038] flex items-center justify-center text-[#9E0038] shadow-md hover:scale-110 transition-transform">
                   <span className="text-[9px] font-mono font-bold">A</span>
@@ -349,7 +328,6 @@ export const PhoneMockup: React.FC = () => {
                 </div>
               </div>
 
-              {/* Persona Route Endpoints */}
               <div className="w-12 h-12 rounded-full bg-gradient-to-tr from-[#9E0038] to-[#2563EB] border-2 border-white flex items-center justify-center text-white shadow-xl cursor-pointer hover:scale-110 transition-transform">
                 <Sparkles className="w-6 h-6" />
               </div>
@@ -362,7 +340,7 @@ export const PhoneMockup: React.FC = () => {
         </div>
       )}
 
-      {/* SCREEN 4: CREDITS & SETTINGS SCREEN (REPLICATED FROM PRINT 4 & 2) */}
+      {/* SCREEN 4: CREDITS & SETTINGS SCREEN WITH REDIRECT TRACKING LINKS */}
       {activeScreen === "credits" && (
         <div className="h-[420px] bg-[#0A0B10] p-4 space-y-4 overflow-y-auto">
           <div className="flex items-center gap-2 pb-2 border-b border-white/10">
@@ -370,7 +348,6 @@ export const PhoneMockup: React.FC = () => {
             <h4 className="text-xs font-bold text-white">Credits & Artists</h4>
           </div>
 
-          {/* Illustrators & Artists Section */}
           <div className="space-y-3">
             <p className="text-[10px] font-mono text-[#9E0038] uppercase">
               Illustrators & Artists
@@ -384,9 +361,14 @@ export const PhoneMockup: React.FC = () => {
                 <h5 className="text-xs font-bold text-white">Hime</h5>
                 <p className="text-[9px] text-[#9CA3AF]">Character Illustrator</p>
               </div>
-              <span className="px-2 py-1 rounded bg-[#9E0038]/20 border border-[#9E0038] text-[9px] font-mono text-white">
+              <a
+                href="/artists/hime"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2 py-1 rounded bg-[#9E0038]/20 border border-[#9E0038] text-[9px] font-mono text-white hover:bg-[#9E0038] transition-colors"
+              >
                 Visit
-              </span>
+              </a>
             </div>
 
             <div className="p-2.5 rounded-xl bg-[#131620] border border-white/10 flex items-center gap-3">
@@ -397,9 +379,14 @@ export const PhoneMockup: React.FC = () => {
                 <h5 className="text-xs font-bold text-white">Valneeko</h5>
                 <p className="text-[9px] text-[#9CA3AF]">Character Illustrator</p>
               </div>
-              <span className="px-2 py-1 rounded bg-[#2563EB]/20 border border-[#2563EB] text-[9px] font-mono text-white">
+              <a
+                href="/artists/valneeko"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-2 py-1 rounded bg-[#2563EB]/20 border border-[#2563EB] text-[9px] font-mono text-white hover:bg-[#2563EB] transition-colors"
+              >
                 Visit
-              </span>
+              </a>
             </div>
           </div>
         </div>
