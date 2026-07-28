@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Zen_Old_Mincho, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/react";
 import "./globals.css";
 
 const zenMincho = Zen_Old_Mincho({
@@ -22,13 +23,13 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sexting Her — Lukajú Indie Studio",
-  description: "Official website for texting-her (sexting-her on Itch.io). Diegetic social simulation and interactive romance game developed in Godot Engine.",
-  keywords: ["texting-her", "sexting-her", "Lukajú", "Godot Engine", "Visual Novel", "Diegetic Game", "Social Simulation", "Indie Game"],
+  title: "Sexting Her — Lukajú",
+  description: "Official website for texting-her (sexting-her on Itch.io). Social simulation and interactive visual novel developed in Godot Engine.",
+  keywords: ["texting-her", "sexting-her", "Lukajú", "Godot Engine", "Visual Novel", "Social Simulation", "Indie Game"],
   authors: [{ name: "Lukajú" }],
   openGraph: {
-    title: "Sexting Her — Lukajú Indie Studio",
-    description: "An entire story told through messages, audios, choices, and branching routes.",
+    title: "Sexting Her — Lukajú",
+    description: "An interactive story told through messages, choices, and branching routes.",
     url: "https://lukaju.itch.io",
     siteName: "Lukajú Studio",
     locale: "en_US",
@@ -36,8 +37,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sexting Her — Lukajú Indie Studio",
-    description: "An entire story told through messages, audios, choices, and branching routes.",
+    title: "Sexting Her — Lukajú",
+    description: "An interactive story told through messages, choices, and branching routes.",
     creator: "@lukajudev",
   },
   robots: {
@@ -58,6 +59,7 @@ export default function RootLayout({
     >
       <body className="bg-[#0A0B10] text-[#F3F4F6] antialiased selection:bg-[#9E0038] selection:text-white">
         {children}
+        <Analytics />
       </body>
     </html>
   );
