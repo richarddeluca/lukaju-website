@@ -25,25 +25,25 @@ export const Header: React.FC = () => {
           : "bg-transparent py-5"
       }`}
     >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Brand Logo */}
         <a href="#" className="flex items-center gap-3">
-          <div className="relative w-8 h-8 rounded bg-[#9E0038]/30 border border-[#9E0038]/60 flex items-center justify-center p-1">
+          <div className="relative w-9 h-9 rounded bg-[#9E0038]/30 border border-[#9E0038]/60 flex items-center justify-center p-1">
             <Image
               src="/ui/logo_lukaju.png"
               alt="Lukajú Logo"
-              width={28}
-              height={28}
+              width={32}
+              height={32}
               className="object-contain"
             />
           </div>
-          <span className="font-serifTitle text-xl font-bold tracking-wide text-white">
+          <span className="font-serifTitle text-2xl font-bold tracking-wide text-white">
             LUKAJÚ
           </span>
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-8 text-sm font-sans text-[#E5E7EB]">
+        <nav className="hidden md:flex items-center gap-10 text-base font-sans font-medium text-[#E5E7EB]">
           <a href="#game" className="hover:text-white transition-colors">
             The Game
           </a>
@@ -61,7 +61,7 @@ export const Header: React.FC = () => {
             href="https://patreon.com/lukaju"
             external
             variant="patreon"
-            size="sm"
+            size="md"
             icon={<Heart className="w-4 h-4 fill-white/40" />}
           >
             Support on Patreon
@@ -80,7 +80,7 @@ export const Header: React.FC = () => {
 
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-[#0D0F17] border-b border-white/10 px-6 py-4 space-y-3 font-sans text-sm text-[#E5E7EB]">
+        <div className="md:hidden bg-[#0D0F17] border-b border-white/10 px-6 py-4 space-y-4 font-sans text-base text-[#E5E7EB]">
           <a
             href="#game"
             onClick={() => setMobileMenuOpen(false)}
